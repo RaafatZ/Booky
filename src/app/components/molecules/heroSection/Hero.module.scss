@@ -1,0 +1,147 @@
+@import "styles/all";
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem 2rem;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .HeroContent {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        max-width: 35%;
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 2rem 0rem 3.5rem 4rem;
+        background-color: #ffff;
+        z-index: 1;
+
+        .Titles {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            h1 {
+                display: flex;
+                color: $brandBlack;
+                width: fit-content;
+                font-size: 5rem;
+                font-weight: 600;
+                flex-direction: column;
+            }
+
+            h2 {
+                color: $BookyDarkPrimary;
+                width: fit-content;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+        }
+
+        .paragraphs {
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            letter-spacing: 2.5px;
+            gap: 20px;
+
+            p {
+                width: 70%;
+                line-height: 1.6;
+                font-size: 1rem;
+                color: $brandLightDarkColor;
+                font-weight: 600;
+                word-wrap: break-word;
+                white-space: normal;
+
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: $brandBlack;
+                }
+            }
+        }
+    }
+
+
+    .imageContainer {
+        z-index: 1;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    @include mobile {
+        .HeroContent {
+            max-width: 100%;
+            gap: 1rem;
+
+            .Titles {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {}
+            }
+
+            .paragraphs {
+                p {
+                    font-size: .7rem;
+
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+
+
+            }
+        }
+
+        @include tablet {
+            .HeroContent {
+                max-width: 100%;
+                gap: 1rem;
+
+                .Titles {
+                    h1 {
+                        font-size: 2rem;
+                    }
+
+                    h2 {}
+                }
+
+                .paragraphs {
+                    p {
+                        font-size: .7rem;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+
+
+                }
+            }
+
+            .imageContainer {
+                display: none;
+            }
+        }
+    }
+}

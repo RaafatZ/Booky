@@ -1,0 +1,35 @@
+// Variables
+$desktop-design-viewport: 1440px;
+$mobile-design-viewport: 320px;
+$desktop-design-height: 768px;
+
+$body-font-poppins-reg: 'poppins-reg';
+$body-font-poppins-semiBold: 'poppins-semiBold';
+$body-font-poppins-bold: 'poppins-bold';
+$body-font-poppins-extraBold: 'poppins-extraBold';
+
+$body-font-cairo: 'cairo-reg';
+$body-font-cairo-semiBold: 'cairo-semiBold';
+$body-font-cairo-bold: 'cairo-bold';
+$body-font-cairo-extraBold: 'poppins-extraBold';
+
+/* Colors */
+$highlightBlue: #00B7FF;
+$brandLightColor: #ffffff;
+$brandBlack: #292929;
+$brandDarkColor: #000000;
+$brandText: #BEBEBE;
+$brandLightDarkColor: #434343;
+$brandShadowColor: #0000001a;
+$brandGrayHoverColor: #F2F2F2;
+$BookyPrimaryColors: #f45350;
+$BookyDarkPrimary: #f12420;
+$BookylighterDarkBlue: #144DFF;
+
+$dotColor: #D9D9D9;
+$shadowColor: rgba(0, 0, 0, 0.15);
+$gradientDark: rgba(0, 0, 0, 0.9);
+
+$layerGradinat: linear-gradient(90deg,
+        rgba(21, 21, 21, 0.8) 0%,
+        rgba(21, 21, 21, 0.12) 100%);

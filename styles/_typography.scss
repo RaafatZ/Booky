@@ -1,0 +1,510 @@
+// @font-face {
+//   font-family: 'poppins-reg';
+//   src: url(../public/fonts/Poppins/Poppins-Regular.ttf);
+// }
+// @font-face {
+//   font-family: 'poppins-semiBold';
+//   src: url(../public/fonts/Poppins/Poppins-SemiBold.ttf);
+// }
+// @font-face {
+//   font-family: 'poppins-bold';
+//   src: url(../public/fonts/Poppins/Poppins-Bold.ttf);
+// }
+// @font-face {
+//   font-family: 'poppins-extraBold';
+//   src: url(../public/fonts/Poppins/Poppins-ExtraBold.ttf);
+// }
+
+// @font-face {
+//   font-family: 'cairo-reg';
+//   src: url(../public/fonts/Cairo/Cairo-Regular.ttf);
+// }
+// @font-face {
+//   font-family: 'cairo-semiBold';
+//   src: url(../public/fonts/Cairo/Cairo-SemiBold.ttf);
+//   font-weight: 600;
+// }
+// @font-face {
+//   font-family: 'cairo-bold';
+//   src: url(../public/fonts/Cairo/Cairo-Bold.ttf);
+//   font-weight: 700;
+// }
+// @font-face {
+//   font-family: 'cairo-extraBold';
+//   src: url(../public/fonts/Cairo/Cairo-ExtraBold.ttf);
+//   font-weight: 800;
+// }
+
+// **####### Display-01 **###########/
+
+@mixin display01-extraBold($maxSize: 72px) {
+  @include font-size(72px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin display01-bold($maxSize: 72px) {
+  @include font-size(72px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin display01-semiBold($maxSize: 72px) {
+  @include font-size(72px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+// **####### Display-02 **###########/
+@mixin display02-extraBold($maxSize: 60px) {
+  @include font-size(60px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin display02-bold($maxSize: 60px) {
+  @include font-size(60px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin display02-semiBold($maxSize: 60px) {
+  @include font-size(60px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+// **####### Heading 01 **###########/
+@mixin h1-extraBold($maxSize: 48px) {
+  @include font-size(48px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 34px;
+  }
+}
+
+@mixin h1-bold($maxSize: 48px) {
+  @include font-size(48px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 34px;
+  }
+}
+
+@mixin h1-semiBold($maxSize: 48px) {
+  @include font-size(48px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 34px;
+  }
+}
+
+// **####### Heading 02 **###########/
+@mixin h2-extraBold($maxSize: 39px) {
+  @include font-size(39px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+  }
+}
+
+@mixin h2-bold($maxSize: 39px) {
+  @include font-size(39px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+  }
+}
+
+@mixin h2-semiBold($maxSize: 39px) {
+  @include font-size(39px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+  }
+}
+
+@mixin h2($maxSize: 39px) {
+  @include font-size(39px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+
+  @media screen and (max-width: 768px) {
+    font-size: 33px;
+  }
+}
+
+// **####### Heading 03 **###########/
+@mixin h3-extraBold($maxSize: 33px) {
+  @include font-size(33px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin h3-bold($maxSize: 33px) {
+  @include font-size(33px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+@mixin h3-semiBold($maxSize: 33px) {
+  @include font-size(33px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+// **####### Heading 04 **###########/
+@mixin h4-extraBold($maxSize: 28px) {
+  @include font-size(28px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+  }
+}
+
+@mixin h4-bold($maxSize: 28px) {
+  @include font-size(28px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+  }
+}
+
+@mixin h4-semiBold($maxSize: 28px) {
+  @include font-size(28px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+  }
+}
+
+// **####### Heading 05 **###########/
+@mixin h5-extraBold($maxSize: 23px) {
+  @include font-size(23px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 19px;
+  }
+}
+
+@mixin h5-bold($maxSize: 23px) {
+  @include font-size(23px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 19px;
+  }
+}
+
+@mixin h5-semiBold($maxSize: 23px) {
+  @include font-size(23px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 19px;
+  }
+}
+
+@mixin h5($maxSize: 23px) {
+  @include font-size(23px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 19px;
+  }
+}
+
+// **####### Heading 06 **###########/
+@mixin h6-extraBold($maxSize: 19px) {
+  @include font-size(19px, $maxSize);
+
+  font-family: $body-font-poppins-extraBold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+@mixin h6-bold($maxSize: 19px) {
+  @include font-size(19px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+@mixin h6-semiBold($maxSize: 19px) {
+  @include font-size(19px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: -2%;
+  line-height: 1.2;
+
+  //   [dir='rtl'] & {
+  //     font-family: $body-font-cairo-bold !important;
+  //   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+// **####### Subheading **###########/
+@mixin subheading1($maxSize: 20px) {
+  @include font-size(20px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+@mixin subheading1-semiBold($maxSize: 20px) {
+  @include font-size(20px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+// **####### Paragraph 01 **###########/
+@mixin p1($maxSize: 14px) {
+  @include font-size(14px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+@mixin p1-semiBold($maxSize: 14px) {
+  @include font-size(14px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+// **####### Paragraph 02 **###########/
+@mixin p2($maxSize: 16px) {
+  @include font-size(16px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+@mixin p2-semiBold($maxSize: 16px) {
+  @include font-size(16px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+@mixin p2-bold($maxSize: 16px) {
+  @include font-size(16px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+// **####### Paragraph 03 **###########/
+@mixin p3($maxSize: 18px) {
+  @include font-size(18px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+@mixin p3-semiBold($maxSize: 18px) {
+  @include font-size(18px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+@mixin p3-bold($maxSize: 18px) {
+  @include font-size(18px, $maxSize);
+
+  font-family: $body-font-poppins-bold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+// **####### Caption **###########/
+@mixin caption($maxSize: 12px) {
+  @include font-size(12px, $maxSize);
+
+  font-family: $body-font-poppins-reg;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+@mixin caption-semiBold($maxSize: 12px) {
+  @include font-size(12px, $maxSize);
+
+  font-family: $body-font-poppins-semiBold;
+  letter-spacing: 0;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+}

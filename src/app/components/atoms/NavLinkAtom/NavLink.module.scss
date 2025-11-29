@@ -1,0 +1,31 @@
+@import "styles/all";
+
+
+
+.NavLinkItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fixed;
+    border-radius: 8px;
+    padding: 10px 12px;
+    gap: 10px;
+    font-weight: 500;
+    line-height: 140%;
+    font-size: 1rem;
+
+    .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+.NavLinkItem:hover {
+    color: $paymobPrimaryColors;
+    background-color: $brandGrayHoverColor;
+
+    s .arrow {
+        transform: rotate(0deg);
+        transition: all 0.4s;
+    }
+}

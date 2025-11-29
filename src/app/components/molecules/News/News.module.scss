@@ -1,0 +1,162 @@
+@import "styles/all";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+    margin-bottom: 10rem;
+
+    .boxsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 45px;
+        width: 100%;
+
+        .firstBox,
+        .secondBox {
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 2.5rem;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .firstBox {
+            text-align: center;
+            gap: 20px;
+            align-items: center;
+
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $brandBlack;
+            }
+
+            p {
+                font-size: 2rem;
+                font-weight: 900;
+                color: $BookyPrimaryColors;
+            }
+
+            img {
+                width: 100%;
+                max-width: 510px;
+                height: auto;
+            }
+        }
+
+
+        .secondBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            gap: 40px;
+            direction: rtl;
+
+            h1 {
+                font-size: 2.5rem;
+                color: $BookyPrimaryColors;
+                font-weight: 900;
+            }
+
+            p {
+                color: $brandBlack;
+                font-size: 1.2rem;
+                font-weight: 900;
+            }
+
+            a {
+                font-weight: 900;
+                font-size: 1.1rem;
+                text-decoration: underline;
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    position: relative;
+                    padding-right: 20px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 9px;
+                        height: 9px;
+                        background-color: $BookyPrimaryColors;
+                        border-radius: 100%;
+                        right: 0;
+                        top: 40%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablets */
+@include tablet {
+    .container {
+        padding: 3rem 1.5rem;
+
+        .boxsWrapper {
+            gap: 30px;
+
+            .firstBox,
+            .secondBox {
+                padding: 3rem 2rem;
+                max-width: 100%;
+            }
+
+            .secondBox h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+/* Mobile */
+@include mobile {
+    .container {
+        padding: 2rem 1rem;
+
+        .boxsWrapper {
+            gap: 25px;
+
+            .firstBox {
+                h1 {
+                    font-size: 1.3rem;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .secondBox {
+                gap: 25px;
+
+                h1 {
+                    font-size: 1.7rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

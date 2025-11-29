@@ -1,0 +1,249 @@
+@import 'styles/all';
+.select_container {
+  position: relative;
+  min-width: 150px;
+
+  &:has(.prefix) .select :global .select-filter__control {
+    padding-inline-start: max(vw(40px), 40px);
+
+    @include mobile {
+      padding-inline-start: max(vw(38px), 38px);
+    }
+  }
+
+  .icon,
+  .prefix {
+    cursor: pointer;
+
+    position: absolute;
+    top: 5px;
+    inset-inline-end: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max(vw(80px), 60px);
+    height: calc(100% - 10px);
+
+    background-color: $brandLightColor;
+    border-radius: vw(100px);
+    svg {
+      width: max(vw(28px), 28px);
+      height: auto;
+    }
+  }
+
+  .prefix {
+    z-index: 1;
+    top: 50%;
+    inset-inline-start: max(vw(30), 12px);
+    inset-inline-end: unset;
+    transform: translateY(-50%);
+
+    width: max(vw(25), 25px);
+    height: max(vw(25), 25px);
+  }
+}
+
+.select {
+  color: $brandLightColor;
+
+  :global .select-filter {
+    &__control {
+      cursor: pointer;
+      padding: max(vw(12px), 10px) max(vw(20px), 12px);
+
+      border-radius: 4px;
+      border: 1px solid $brandNeutral600;
+      box-shadow: none;
+
+      &--is-focused {
+        border: 1px solid $brandNeutral600;
+        box-shadow: none;
+      }
+    }
+
+    &__indicator-separator {
+      display: none;
+    }
+
+    &__indicators {
+      visibility: unset;
+    }
+
+    &__menu {
+      @include p1();
+      z-index: 10;
+      color: $brandNeutral900;
+      bottom: 0;
+
+      .select-filter__option--is-focused {
+        background-color: transparent;
+        color: inherit;
+      }
+
+      .select-filter__option--is-selected {
+        background-color: $brandError50;
+        color: $brandNeutral900;
+      }
+
+      .select-filter__option:hover {
+        background-color: $brandError50;
+        color: $brandNeutral900;
+      }
+    }
+
+    &__menu-list {
+      z-index: 20;
+      box-shadow:
+        0 0 0 1px hsla(0, 0%, 0%, 0.1),
+        0 4px 11px hsla(0, 0%, 0%, 0.1);
+      border: 1px solid hsla(0, 0%, 0%, 0.1);
+      background-color: $brandLightColor;
+      margin-bottom: 10px;
+    }
+
+    &__placeholder {
+      @include p1();
+      color: $brandDarkColor;
+    }
+
+    &__single-value {
+      @include p1();
+      color: $brandDarkColor;
+    }
+
+    &__multi-value {
+      background-color: $brandPrimary500;
+      border-radius: 16px;
+      padding: 0px 4px;
+      display: flex;
+      align-items: center;
+      color: $brandNeutral900;
+      min-width: fit-content;
+
+      &__label {
+        @include h1-bold();
+        color: white;
+        padding-right: 8px;
+      }
+      /* Close (X) Button */
+      &__remove {
+        cursor: pointer;
+        transition: color 0.2s ease;
+        border-radius: 50%;
+        background-color: $brandLightColor;
+        color: $brandPrimary500;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__value-container {
+      display: flex;
+      gap: 4px;
+      padding-inline-start: 6px;
+
+      // flex-wrap: nowrap;
+      // overflow-x: auto !important;
+      // max-width: 100%;
+      // min-width: 0; /* Prevents shrinking */
+      // white-space: nowrap;
+
+      // scrollbar-width: thin;
+      // -ms-overflow-style: none;
+
+      // &::-webkit-scrollbar {
+      //   height: 3px;
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: rgba(255, 255, 255, 0.5);
+      //   border-radius: 4px;
+      // }
+    }
+  }
+}
+
+.customPrimaryChipContainer {
+  background-color: $brandPrimary500;
+  border-radius: 16px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: space-between;
+  color: $brandLightColor;
+
+  label {
+    @include p1();
+    color: white;
+    padding-right: 8px;
+  }
+
+  .removeButton {
+    @include p1();
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+
+    transition: color 0.2s ease;
+    border-radius: 50%;
+    background-color: $brandLightColor;
+    color: $brandPrimary500;
+    width: 16px;
+    height: 16px;
+    border: 0px;
+    padding-bottom: 2px;
+  }
+}
+
+.customChipContainer {
+  background-color: $brandNeutral300;
+  color: $brandLightColor;
+
+  label {
+    @include p1();
+    color: $brandDarkColor;
+  }
+
+  .customChipType {
+    background-color: rgba(111, 111, 111, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 2px 12px;
+    margin-block: 2px;
+
+    span {
+      @include p1();
+      color: $brandDarkColor;
+      // margin-right: 8px;
+    }
+  }
+
+  .removeButton {
+    background-color: $brandDarkColor;
+    color: $brandLightColor;
+  }
+}
+
+.errorContainer {
+  .select {
+    :global .select-filter {
+      &__control {
+        border: 1px solid $brandError900 !important;
+
+        &:hover {
+          border: 1px solid $brandError900 !important;
+          box-shadow: unset !important;
+        }
+      }
+    }
+  }
+}

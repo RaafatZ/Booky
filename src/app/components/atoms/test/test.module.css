@@ -1,0 +1,50 @@
+.container {
+  text-align: center;
+  padding: 3rem;
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+.search {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 2rem;
+  width: 250px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card h3 {
+  color: #7c3aed;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: bold;
+}/*# sourceMappingURL=test.module.css.map */

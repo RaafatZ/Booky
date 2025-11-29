@@ -1,0 +1,17 @@
+@import "styles/all";
+
+.container {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    padding: 5rem 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .AboutInfo {}
+
+    .AboutList {
+        background-color: rgb(51, 0, 255);
+    }
+}

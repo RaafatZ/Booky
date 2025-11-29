@@ -1,0 +1,179 @@
+@import "styles/all";
+
+.featuresContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+
+    .featuresBox {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+
+        img {
+            border-radius: 32px;
+        }
+
+        .featuresContant {
+            display: flex;
+            border-radius: 32px;
+            justify-content: space-evenly;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 62.5rem;
+            position: relative;
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+
+            h1 {
+                color: $brandLightDarkColor;
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+                color: $BookyPrimaryColors;
+            }
+
+            h3 {
+                font-size: 2.3rem;
+
+                color: $brandBlack;
+            }
+
+            p {
+                font-size: 1.3rem;
+
+                color: $brandLightDarkColor ;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+
+
+                a {
+                    position: relative;
+                    font-size: 1rem;
+                    font-weight: 800;
+                    transition: 0.2s all ease-in;
+                    color: $brandBlack;
+                }
+
+                .Icon {
+                    color: $BookyPrimaryColors;
+                    height: 48px;
+                    width: 48px;
+                    transition: 0.1s all ease-in;
+                }
+
+                &:hover {
+                    a {
+                        color: $BookyDarkPrimary;
+
+                    }
+
+                    .Icon {
+                        transform: translateX(3px);
+                    }
+                }
+            }
+        }
+    }
+
+    .FeaturesList {
+        display: flex;
+        align-items: center;
+        min-width: 62.5rem;
+        gap: 10rem;
+        list-style: none;
+
+        .FeaturesListItems {
+            display: flex;
+            gap: 10px;
+
+            h2 {
+                font-size: 1.5rem;
+                color: $BookyPrimaryColors;
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: $brandLightDarkColor;
+            }
+        }
+    }
+
+    @include mobile {
+        padding-top: 5rem;
+        gap: 4rem;
+
+        .featuresBox {
+            flex-direction: column;
+            gap: 3rem;
+
+            img {
+                align-self: center;
+                width: 90%;
+                border-radius: 2rem;
+            }
+
+            .featuresContant {
+                min-width: 100%;
+                padding: 1.5rem 1.5rem;
+
+                h1 {
+                    font-size: 0.7rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                h3 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+
+                span {
+                    justify-content: center;
+
+                    .Icon {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+
+        .FeaturesList {
+            display: flex;
+            align-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex-direction: column;
+            min-width: 100%;
+            gap: 2rem;
+
+            .FeaturesListItems {
+                justify-content: center;
+
+                h2 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

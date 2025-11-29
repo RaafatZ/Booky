@@ -1,0 +1,52 @@
+@import "styles/all";
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 291.5px;
+    height: 335px;
+    flex-direction: column;
+    background-color: $paymoblighterDarkBlue;
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 24px;
+    gap: 1rem;
+
+    .title {
+        align-self: flex-start;
+        font-size: 21px;
+        line-height: 135%;
+        font-weight: 600;
+        color: white;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: #06FFC3;
+        }
+    }
+
+    .description {
+        color: $brandGrayHoverColor;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 140%;
+    }
+
+    .iconWrapper {
+        align-self: flex-start;
+    }
+
+    .cornerIcon {
+        border-radius: 24px;
+
+        .img {
+            border-radius: 1rem;
+        }
+    }
+}

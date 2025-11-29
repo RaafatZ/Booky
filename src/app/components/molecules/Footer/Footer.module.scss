@@ -1,0 +1,177 @@
+@import "styles/all";
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: $brandBlack;
+
+    .FooterWrapper {
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+
+        width: fit-content;
+        gap: 24px;
+        padding: 5rem 2rem;
+
+        .infoBox {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-basis: 30%;
+
+            h1 {
+                font-size: 2rem;
+                color: white;
+
+                span {
+                    color: $BookyPrimaryColors;
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: $brandText;
+            }
+
+            .Social {
+                display: flex;
+                gap: 1rem;
+                list-style: none;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 12px;
+                    background-color: $BookyPrimaryColors;
+
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+                        color: $brandBlack;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .listBox {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                gap: 15px;
+
+                h1 {
+                    color: white;
+
+                }
+
+                li {
+                    color: $brandText;
+                }
+            }
+        }
+
+        .contactBox {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 25px;
+            text-align: end;
+
+            h1 {
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: white;
+            }
+
+            span {
+                font-size: 2rem;
+                color: $BookyPrimaryColors;
+            }
+
+            p {
+                display: flex;
+                flex-direction: column;
+                color: $brandText;
+                font-size: 1.5rem;
+                gap: 10px;
+
+                span {
+                    color: $brandText;
+                    font-size: 1.5rem;
+                }
+            }
+
+            a {
+                font-size: 1.7rem;
+                color: white;
+                text-decoration: underline;
+            }
+        }
+
+        .copyRight {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            border-top: .5px $dotColor solid;
+
+            p {
+                padding-top: 20px;
+                color: $brandText;
+            }
+        }
+    }
+}
+
+/* Tablets */
+@include tablet {
+    .container {
+        align-items: center;
+        text-align: center;
+
+        .FooterWrapper {
+            flex-wrap: wrap;
+
+            .listBox {
+                flex-direction: column;
+            }
+
+            .contactBox {
+                padding-top: 1rem;
+                align-items: center;
+            }
+        }
+    }
+}
+
+/* Mobile */
+@include mobile {
+    .container {
+        align-items: center;
+        text-align: center;
+
+        .FooterWrapper {
+            flex-wrap: wrap;
+
+            .listBox {
+                padding-top: 1rem;
+                flex-direction: column;
+            }
+        }
+    }
+}

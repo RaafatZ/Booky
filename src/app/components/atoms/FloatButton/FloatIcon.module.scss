@@ -1,0 +1,36 @@
+@import "styles/all";
+
+.FloatIcon {
+    right: 3rem;
+    cursor: default;
+
+    :global(.ant-float-btn-body) {
+        width: 64px !important;
+        height: 64px !important;
+    }
+
+    :global() {
+        background-color: transparent;
+    }
+
+    :global(.ant-float-btn-body):hover {
+        background-color: white;
+    }
+
+    :global(.ant-float-btn-content) {
+        width: 32px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        padding: 0 !important;
+    }
+
+    :global(.ant-float-btn-icon) {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    :global(.ant-float-btn-icon) {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
