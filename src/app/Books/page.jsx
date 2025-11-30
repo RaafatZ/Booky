@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import styles from "./Books.module.scss";
+import { Popover } from "antd";
 
 export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
   const [books, setBooks] = useState([]);
@@ -9,10 +10,6 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
 
-  const [categories, setCategories] = useState([]); // extracted categories
-  const [selectedCategory, setSelectedCategory] = useState("");
-
-  // Fetch books
   const loadBooks = async (reset = false) => {
     if (!nextPage && !reset) return;
 
@@ -24,15 +21,9 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
       const res = await fetch(url);
       const data = await res.json();
 
-      // Update books
       const newBooks = reset ? data.results : [...books, ...data.results];
       setBooks(newBooks);
-
-      // Save next page
       setNextPage(data.next);
-
-      // Extract categories only once
-      if (reset) extractCategories(newBooks);
     } catch (err) {
       console.error("Failed:", err);
     }
@@ -40,39 +31,21 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
     setLoading(false);
   };
 
-  // Extract all available subjects from loaded books
-  const extractCategories = (bookList) => {
-    const setCat = new Set();
-
-    bookList.forEach((book) => {
-      book.subjects?.forEach((sub) => setCat.add(sub));
-    });
-
-    setCategories([...setCat]);
-  };
-
   useEffect(() => {
     loadBooks(true);
   }, []);
 
-  // Search handler
   const handleSearch = (e) => {
     e.preventDefault();
     setNextPage(null);
     loadBooks(true);
   };
 
-  // Filtered Books
-  const filteredBooks = selectedCategory
-    ? books.filter((b) => b.subjects?.includes(selectedCategory))
-    : books;
-
   return (
     <div className={styles.container}>
       <h2>Books Library</h2>
 
-      <div className={styles.filters}>
-        {/* Search */}
+      <div className={styles.booksWrapper}>
         <form onSubmit={handleSearch} className={styles.searchBox}>
           <input
             value={search}
@@ -82,36 +55,36 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
           <button type="submit">Search</button>
         </form>
 
-        {/* Category Filter */}
-        <select
-          className={styles.select}
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="">All Categories</option>
-          {categories.map((cat, i) => (
-            <option key={i} value={cat}>
-              {cat}
-            </option>
+        <div className={styles.gridBooks}>
+          {books.map((book) => (
+            <div key={book.id} className={styles.card}>
+              <Popover
+                title={book.title}
+                trigger="click"
+                content={
+                  <div style={{ maxWidth: "550px" }}>
+                    <p>
+                      <strong>Author:</strong>{" "}
+                      {book.authors?.[0]?.name || "Unknown"}
+                    </p>
+                    <p>
+                      <strong>Subjects:</strong>{" "}
+                      {book.subjects?.slice(0, 5).join(", ") || "None"}
+                    </p>
+                  </div>
+                }
+              >
+                <img
+                  src={book.formats["image/jpeg"] || "/placeholder.png"}
+                  alt={book.title}
+                  className={styles.bookImage}
+                />
+              </Popover>
+            </div>
           ))}
-        </select>
+        </div>
       </div>
 
-      {/* Books Grid */}
-      <div className={styles.grid}>
-        {filteredBooks.map((book) => (
-          <div key={book.id} className={styles.card}>
-            <img
-              src={book.formats["image/jpeg"] || "/placeholder.png"}
-              alt={book.title}
-            />
-            <h4>{book.title}</h4>
-            <p>{book.authors?.[0]?.name || "Unknown Author"}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Load More */}
       {nextPage && (
         <button
           className={styles.loadMore}
