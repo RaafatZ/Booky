@@ -78,33 +78,20 @@ export default function SliderAtom({ apiUrl }) {
                 />
                 <h2>{book.title}</h2>
 
-                {book.formats?.["text/plain; charset=utf-8"] ? (
-                  <a
-                    href={book.formats["text/plain; charset=utf-8"]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.downloadBtn}
-                  >
-                    Download
-                  </a>
-                ) : book.formats?.["application/epub+zip"] ? (
-                  <a
-                    href={
-                      book.formats["text/plain; charset=utf-8"] ||
-                      book.formats["text/plain"] ||
-                      book.formats["application/epub+zip"] ||
-                      book.formats["application/pdf"] ||
-                      "#"
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download
-                  >
-                    Download
-                  </a>
-                ) : (
-                  <button disabled>No Download</button>
-                )}
+                <a
+                  href={
+                    book.formats["text/plain; charset=utf-8"] ||
+                    book.formats["text/plain"] ||
+                    book.formats["application/epub+zip"] ||
+                    book.formats["application/pdf"] ||
+                    "#"
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download
+                </a>
               </div>
             ))
           ) : (

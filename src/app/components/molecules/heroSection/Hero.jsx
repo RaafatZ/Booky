@@ -30,7 +30,9 @@ export default function Hero() {
             eBooks immediately and start reading on any device.
           </p>
         </div>
-        <ButtonAtom> Discover Now</ButtonAtom>
+        <ButtonAtom>
+          <a href="/Books">Discover Now</a>
+        </ButtonAtom>
       </div>
       <div className={styles.imageContainer}>
         <Image src={image} alt="bg" width={600} height={600} />

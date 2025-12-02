@@ -23,7 +23,9 @@ export default function Nav() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        Book<span>y</span>
+        <a href="/">
+          Book<span>y</span>
+        </a>
       </div>
 
       {isMobile ? (

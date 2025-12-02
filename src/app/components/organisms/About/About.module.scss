@@ -2,16 +2,121 @@
 
 .container {
     display: flex;
-    height: 80vh;
-    width: 100%;
-    padding: 5rem 2rem;
-    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 5rem 4rem;
+    position: relative;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
 
-    .AboutInfo {}
+    @include mobile {
+        flex-direction: column;
+        height: auto;
+        padding: 5rem 2rem;
+    }
 
-    .AboutList {
-        background-color: rgb(51, 0, 255);
+    .AboutInfo {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        max-width: 35%;
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 2rem 4rem;
+        background-color: #fff;
+        z-index: 1;
+
+        @include tablet {
+            max-width: 60%;
+            padding: 2rem;
+        }
+
+        @include mobile {
+            max-width: 100%;
+            gap: 2rem;
+            padding: 1.5rem;
+        }
+
+        .Titles {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            h1 {
+                display: flex;
+                color: $brandBlack;
+                width: fit-content;
+                font-size: 3rem;
+                font-weight: 600;
+                flex-direction: column;
+
+                @include tablet {
+                    font-size: 2.4rem;
+                }
+
+                @include mobile {
+                    font-size: 2rem;
+                }
+            }
+
+            h2 {
+                color: $BookyDarkPrimary;
+                width: fit-content;
+                font-weight: bold;
+                font-size: 1.2rem;
+
+                @include mobile {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .paragraphs {
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            letter-spacing: 2.5px;
+            gap: 20px;
+
+            p {
+                width: 70%;
+                line-height: 1.6;
+                font-size: 1rem;
+                color: $brandLightDarkColor;
+                font-weight: 600;
+                word-wrap: break-word;
+                white-space: normal;
+
+                @include tablet {
+                    width: 90%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 0.95rem;
+                }
+            }
+        }
+
+        .members {
+            .membersLists {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    @include mobile {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
     }
 }

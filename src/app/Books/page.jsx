@@ -47,6 +47,7 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
 
       <div className={styles.booksWrapper}>
         <form onSubmit={handleSearch} className={styles.searchBox}>
+          <h1>Search</h1>
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -67,10 +68,21 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
                       <strong>Author:</strong>{" "}
                       {book.authors?.[0]?.name || "Unknown"}
                     </p>
-                    <p>
-                      <strong>Subjects:</strong>{" "}
-                      {book.subjects?.slice(0, 5).join(", ") || "None"}
-                    </p>
+                    <h2>Download:</h2>
+                    <a
+                      href={
+                        book.formats["text/plain; charset=utf-8"] ||
+                        book.formats["text/plain"] ||
+                        book.formats["application/epub+zip"] ||
+                        book.formats["application/pdf"] ||
+                        "#"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                    >
+                      Download
+                    </a>
                   </div>
                 }
               >
