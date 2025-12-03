@@ -1,7 +1,8 @@
+"use client";
+import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 import bg from "../../../../../public/Image/abstract-blur-beautiful-luxury-shopping-mall-center.jpg";
 import image from "../../../../../public/Image/67164edc79127363c5ebc9bc_optimized_1156.webp";
-
 import Image from "next/image";
 import ButtonAtom from "./../../atoms/ButtonAtom/ButtonAtom";
 
@@ -12,7 +13,13 @@ export default function Hero() {
       id="HeroSection"
       style={{ backgroundImage: `url(${bg.src})` }}
     >
-      <div className={styles.HeroContent}>
+      <motion.div
+        className={styles.HeroContent}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className={styles.Titles}>
           <h2>Booky</h2>
           <h1>
@@ -33,10 +40,17 @@ export default function Hero() {
         <ButtonAtom>
           <a href="/Books">Discover Now</a>
         </ButtonAtom>
-      </div>
-      <div className={styles.imageContainer}>
+      </motion.div>
+
+      <motion.div
+        className={styles.imageContainer}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+      >
         <Image src={image} alt="bg" width={600} height={600} />
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import styles from "./LastNews.module.scss";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
@@ -11,16 +12,28 @@ import ButtonAtom from "../../atoms/ButtonAtom/ButtonAtom";
 export default function LatestNews() {
   return (
     <section className={styles.container}>
-      <div className={styles.Titles}>
+      <motion.div
+        className={styles.Titles}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <h1>
           <span>Last</span> News
         </h1>
         <ButtonAtom>
           <a href="/Books">View All</a>
         </ButtonAtom>
-      </div>
+      </motion.div>
       <div className={styles.wrapper}>
-        <div className={styles.leftCard}>
+        <motion.div
+          className={styles.leftCard}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <Image
             src={news1}
             width={600}
@@ -46,10 +59,16 @@ export default function LatestNews() {
               <button className={styles.learnMore}>Learn More</button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className={styles.rightContent}>
-          <div className={styles.smallItem}>
+          <motion.div
+            className={styles.smallItem}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          >
             <div className={styles.iconCircle}>
               <Image src={news3} width={160} height={160} alt="Read" />
             </div>
@@ -62,8 +81,14 @@ export default function LatestNews() {
                 book that fits your mood and taste.
               </p>
             </div>
-          </div>
-          <div className={styles.smallItem}>
+          </motion.div>
+          <motion.div
+            className={styles.smallItem}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          >
             <div className={styles.iconCirclePink}>
               <Image src={news4} width={160} height={160} alt="Cover" />
             </div>
@@ -76,9 +101,15 @@ export default function LatestNews() {
                 think.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.smallItem}>
+          <motion.div
+            className={styles.smallItem}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          >
             <div className={styles.iconCircleBlue}>
               <Image src={news5} width={160} height={160} alt="Ebooks" />
             </div>
@@ -91,7 +122,7 @@ export default function LatestNews() {
                 how we read.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

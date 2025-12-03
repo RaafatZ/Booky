@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Carousel } from "antd";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -49,7 +50,13 @@ export default function SliderAtom({ apiUrl }) {
   }, [apiUrl]);
 
   return (
-    <div className={styles.carouselWrapper}>
+    <motion.div
+      className={styles.carouselWrapper}
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
       <button
         className={styles.arrowLeft}
         onClick={() => sliderRef.current?.prev()}
@@ -69,7 +76,14 @@ export default function SliderAtom({ apiUrl }) {
         >
           {books.length > 0 ? (
             books.map((book, i) => (
-              <div key={i} className={styles.slide}>
+              <motion.div
+                key={i}
+                className={styles.slide}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.7, ease: "easeIn" }}
+              >
                 <img
                   src={book.formats?.["image/jpeg"] || "/Image/224.png"}
                   alt={book.title}
@@ -92,7 +106,7 @@ export default function SliderAtom({ apiUrl }) {
                 >
                   Download
                 </a>
-              </div>
+              </motion.div>
             ))
           ) : (
             <Loading />
@@ -106,6 +120,6 @@ export default function SliderAtom({ apiUrl }) {
       >
         <ChevronRight size={40} />
       </button>
-    </div>
+    </motion.div>
   );
 }

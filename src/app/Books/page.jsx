@@ -1,5 +1,7 @@
 "use client";
 
+import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import styles from "./Books.module.scss";
 import { Popover } from "antd";
@@ -44,21 +46,37 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
   return (
     <div className={styles.container}>
       <h2>Books Library</h2>
-
-      <div className={styles.booksWrapper}>
-        <form onSubmit={handleSearch} className={styles.searchBox}>
-          <h1>Search</h1>
+      <motion.form
+        onSubmit={handleSearch}
+        className={styles.searchBox}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <h1>Search</h1>
+        <div>
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search books..."
           />
-          <button type="submit">Search</button>
-        </form>
-
+          <button type="submit">
+            <Search />
+          </button>
+        </div>
+      </motion.form>
+      <div className={styles.booksWrapper}>
         <div className={styles.gridBooks}>
           {books.map((book) => (
-            <div key={book.id} className={styles.card}>
+            <motion.div
+              key={book.id}
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            >
               <Popover
                 title={book.title}
                 trigger="click"
@@ -92,7 +110,7 @@ export default function BooksPage({ apiUrl = "https://gutendex.com/books" }) {
                   className={styles.bookImage}
                 />
               </Popover>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

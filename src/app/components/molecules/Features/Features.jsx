@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import imag from "../../../../../public/Image/67110c35720ef6f03b163d17_optimized_987_c987x1315-0x0.webp";
 import icon1 from "../../../../../public/Icons/006-student.svg";
 import icon2 from "../../../../../public/Icons/017-onlineEducation.svg";
@@ -9,7 +11,13 @@ import bg from "../../../../../public/Image/bgTest3.png";
 export default function Features() {
   return (
     <div className={styles.featuresContainer} id="FeaturesSection">
-      <div className={styles.featuresBox}>
+      <motion.div
+        className={styles.featuresBox}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <Image src={imag} alt="Features img" width={453} height={481} />
         <div
           className={styles.featuresContant}
@@ -24,8 +32,14 @@ export default function Features() {
             <ChevronRight className={styles.Icon} />
           </span>
         </div>
-      </div>
-      <ul className={styles.FeaturesList}>
+      </motion.div>
+      <motion.ul
+        className={styles.FeaturesList}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeIn" }}
+      >
         <li className={styles.FeaturesListItems}>
           <Image src={icon1} alt="Features icon" width={60} height={60} />
           <div>
@@ -47,7 +61,7 @@ export default function Features() {
             <p>Read the purchased book on any device.</p>
           </div>
         </li>
-      </ul>
+      </motion.ul>
     </div>
   );
 }

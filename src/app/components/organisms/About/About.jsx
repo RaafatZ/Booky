@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import styles from "./About.module.scss";
 import ButtonAtom from "../../atoms/ButtonAtom/ButtonAtom";
 import bg from "../../../../../public/Image/cover-bg.png";
@@ -8,7 +10,13 @@ export default function About() {
       className={styles.container}
       style={{ backgroundImage: `url(${bg.src})` }}
     >
-      <div className={styles.AboutInfo}>
+      <motion.div
+        className={styles.AboutInfo}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className={styles.Titles}>
           <h2>Booky</h2>
           <h1>About Our Team :</h1>
@@ -48,7 +56,7 @@ export default function About() {
         <ButtonAtom>
           <a href="/">Go Back</a>
         </ButtonAtom>
-      </div>
+      </motion.div>
     </div>
   );
 }

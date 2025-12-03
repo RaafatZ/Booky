@@ -28,6 +28,7 @@
     "@types/react-facebook-login": "^4.1.11",
     "accept-language": "^3.0.20",
     "antd": "^5.26.4",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "framer-motion": "^12.23.0",
     "google-map-react": "^2.2.1",
